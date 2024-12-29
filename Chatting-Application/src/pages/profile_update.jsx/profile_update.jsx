@@ -1,15 +1,26 @@
 import React from "react";
 import "./profile_update.css";
 import assets from "../../assets/assets";
-const profile_update = () => {
+const ProfileUpdate = () => {
+  const [image, setImage] = React.useState(null);
   return (
     <div className="profile">
       <div className="profile-container">
         <form className="form_profile">
           <h3>Profile Details</h3>
           <label htmlFor="avatar" className="avatar">
-            <input type="file" id="avatar" accept=".png,.jpg,.jpeg" hidden />
-            <img src={assets.avatar_icon} alt="" className="Profile_upload" />
+            <input
+              onChange={(e) => setImage(e.target.files[0])}
+              type="file"
+              id="avatar"
+              accept=".png,.jpg,.jpeg"
+              hidden
+            />
+            <img
+              src={image ? URL.createObjectURL(image) : assets.avatar_icon}
+              alt=""
+              className="Profile_upload"
+            />
             Uplad profile picture
           </label>
           <div className="input">
@@ -33,4 +44,4 @@ const profile_update = () => {
   );
 };
 
-export default profile_update;
+export default ProfileUpdate;
