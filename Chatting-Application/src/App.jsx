@@ -5,14 +5,17 @@ import Chat from "./pages/chat/chat";
 import ProfileUpdate from "./pages/profile_update.jsx/profile_update";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Leads from "./pages/Leads/leads";
 const App = () => {
   return (
     <>
-    <ToastContainer /><Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/chat" element={<Chat />} />
-      <Route path="/profile" element={<ProfileUpdate />} />
-    </Routes>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/profile" element={<ProfileUpdate />} />
+        <Route path="/leads" element={<Leads/>}/>
+      </Routes>
     </>
   );
 };

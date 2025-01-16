@@ -21,7 +21,7 @@ const ProfileUpdate = () => {
               alt=""
               className="Profile_upload"
             />
-            Uplad profile picture
+            Upload profile picture
           </label>
           <div className="input">
             <input
