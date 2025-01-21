@@ -2,7 +2,6 @@
     background: #001030;
     color: white;
     height: 75vh;
-    width: 300px;
 }
 .ls-top{
     padding: 20px;
@@ -28,7 +27,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 20px;
+    padding: 10px 12px;
     margin-top: 20px;
 }
 
@@ -51,7 +50,7 @@
 .ls-list{
     display: flex;
     flex-direction: column;
-    height: 66%;
+    height: 60%;
     overflow-y: scroll;
 }
 .friends img{
@@ -84,4 +83,36 @@
 
 .friends:hover span{
     color: white;
+}
+
+.ls-nav .menu{
+    position: relative;
+    padding: 10px 0px;
+}
+
+.menu .sub-menu{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 130px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    display: none;
+}
+.sub-menu hr{
+    bottom: none;
+    height: 1px;
+    background: #a4a4a4;
+    margin: 8px 0px;
+}
+
+.sub-menu p{
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.menu:hover .sub-menu{
+    display: block;
 }
