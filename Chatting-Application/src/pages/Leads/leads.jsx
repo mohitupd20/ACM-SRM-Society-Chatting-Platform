@@ -142,10 +142,10 @@ const Leads = () => {
   return (
     <>
     <div className="leads-container_acm_leads">
-      <h1>Our Brilliant Team</h1>
+      <h1 className="main-heading">Our Brilliant Team</h1>
 
       {/* Core Team Section */}
-      <h2>Core Team</h2>
+      <h2 className="section-heading">Core Team</h2>
       <div className="core-team-section_acm_leads">
         <div className="row_acm_leads">
           {coreTeamData_acm_leads.slice(0, 4).map((core, index) => (
@@ -192,7 +192,7 @@ const Leads = () => {
       </div>
 
       {/* Heads and Members Section */}
-      <h2>Heads and Members</h2>
+      <h2 className="section-heading">Heads and Members</h2>
       <div className="heads-members-section_acm_leads">
         <div className="row_acm_leads">
           {headsAndMembersData_acm_leads.slice(0, 4).map((person, index) => (
