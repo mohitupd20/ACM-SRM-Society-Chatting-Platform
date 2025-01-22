@@ -141,103 +141,121 @@ const Leads = () => {
 
   return (
     <>
-    <div className="leads-container_acm_leads">
-      <h1 className="main-heading">Our Brilliant Team</h1>
+      <div className="leads-container_acm_leads">
+        <h1 className="main-heading">Our Brilliant Team</h1>
 
-      {/* Core Team Section */}
-      <h2 className="section-heading">Core Team</h2>
-      <div className="core-team-section_acm_leads">
-        <div className="row_acm_leads">
-          {coreTeamData_acm_leads.slice(0, 4).map((core, index) => (
-            <div className="core-card_acm_leads" key={index}>
-              <img src={core.image} alt={core.name} />
-              <h3>{core.name}</h3>
-              <p>{core.position}</p>
-              <p>SRM ACM</p>
-              <div className="social-icons_acm_leads">
-                <a href={core.social.linkedin} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a href={core.social.github} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-github"></i>
-                </a>
-                <a href={core.social.instagram} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram"></i>
-                </a>
+        {/* Core Team Section */}
+        <h2 className="section-heading">Core Team</h2>
+        <div className="core-team-section_acm_leads">
+          <div className="row_acm_leads">
+            {coreTeamData_acm_leads.slice(0, 4).map((core, index) => (
+              <div className="core-card_acm_leads" key={index}>
+                <img src={core.image} alt={core.name} />
+                <h3>{core.name}</h3>
+                <p>{core.position}</p>
+                <p>SRM ACM</p>
+                <div className="social-icons_acm_leads">
+                  <a href={core.social.linkedin} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a href={core.social.github} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-github"></i>
+                  </a>
+                  <a href={core.social.instagram} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="row_acm_leads">
+            {coreTeamData_acm_leads.slice(4).map((core, index) => (
+              <div className="core-card_acm_leads" key={index}>
+                <img src={core.image} alt={core.name} />
+                <h3>{core.name}</h3>
+                <p>{core.position}</p>
+                <p>SRM ACM</p>
+                <div className="social-icons_acm_leads">
+                  <a href={core.social.linkedin} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a href={core.social.github} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-github"></i>
+                  </a>
+                  <a href={core.social.instagram} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="row_acm_leads">
-          {coreTeamData_acm_leads.slice(4).map((core, index) => (
-            <div className="core-card_acm_leads" key={index}>
-              <img src={core.image} alt={core.name} />
-              <h3>{core.name}</h3>
-              <p>{core.position}</p>
-              <p>SRM ACM</p>
-              <div className="social-icons_acm_leads">
-                <a href={core.social.linkedin} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a href={core.social.github} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-github"></i>
-                </a>
-                <a href={core.social.instagram} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram"></i>
-                </a>
+
+        {/* Heads and Members Section */}
+        <h2 className="section-heading">Heads and Members</h2>
+        <div className="heads-members-section_acm_leads">
+          <div className="row_acm_leads">
+            {headsAndMembersData_acm_leads.slice(0, 4).map((person, index) => (
+              <div className="card_acm_leads" key={index}>
+                <img src={person.image} alt={person.name} />
+                <h3>{person.name}</h3>
+                <p>{person.position}</p>
+                <p>SRM ACM</p>
+                <div className="social-icons_acm_leads">
+                  <a href={person.social.linkedin} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a href={person.social.github} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-github"></i>
+                  </a>
+                  <a href={person.social.instagram} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="row_acm_leads">
+            {headsAndMembersData_acm_leads.slice(4).map((person, index) => (
+              <div className="card_acm_leads" key={index}>
+                <img src={person.image} alt={person.name} />
+                <h3>{person.name}</h3>
+                <p>{person.position}</p>
+                <p>SRM ACM</p>
+                <div className="social-icons_acm_leads">
+                  <a href={person.social.linkedin} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a href={person.social.github} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-github"></i>
+                  </a>
+                  <a href={person.social.instagram} target="_blank" rel="noopener noreferrer">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Heads and Members Section */}
-      <h2 className="section-heading">Heads and Members</h2>
-      <div className="heads-members-section_acm_leads">
-        <div className="row_acm_leads">
-          {headsAndMembersData_acm_leads.slice(0, 4).map((person, index) => (
-            <div className="card_acm_leads" key={index}>
-              <img src={person.image} alt={person.name} />
-              <h3>{person.name}</h3>
-              <p>{person.position}</p>
-              <p>SRM ACM</p>
-              <div className="social-icons_acm_leads">
-                <a href={person.social.linkedin} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a href={person.social.github} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-github"></i>
-                </a>
-                <a href={person.social.instagram} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram"></i>
-                </a>
-              </div>
-            </div>
-          ))}
+      {/* Footer Section */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-logo">
+            <img src={assets.srm_logo} alt="SRM ACM Logo" />
+          </div>
+          <div className="footer-text">
+          <h3 className="footerclubheading">SRM ACM Student Chapter </h3>
+            <p class="footer_para_leads">Code, coffee, and collaboration by your buddies at SRM ACM</p>
+          </div>
+          <div className="footer-contact">
+            <p class="footer_para_leads" >Contact us:</p>
+            <p class="footer_para_leads" >Email: acmsrmktr@gmail.com</p>
+            <p class="footer_para_leads" >Phone: +91 98407 75825</p>
+          </div>
         </div>
-        <div className="row_acm_leads">
-          {headsAndMembersData_acm_leads.slice(4).map((person, index) => (
-            <div className="card_acm_leads" key={index}>
-              <img src={person.image} alt={person.name} />
-              <h3>{person.name}</h3>
-              <p>{person.position}</p>
-              <p>SRM ACM</p>
-              <div className="social-icons_acm_leads">
-                <a href={person.social.linkedin} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a href={person.social.github} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-github"></i>
-                </a>
-                <a href={person.social.instagram} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram"></i>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+      </footer>
     </>
   );
 };

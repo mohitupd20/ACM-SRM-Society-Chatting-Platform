@@ -29,7 +29,7 @@ import webmaster_acm from "./webmaster_acm.jpg";
 import CH_acm from "./CH_acm.jpg";
 import JcorH_acm from "./JcorH_acm.jpg";
 import nihalSP_acm from "./nihalSP_acm.jpg";
-
+import srm_logo from "./srm_logo.png";
 const assets = {
   avatar_icon,
   gallery_icon,
@@ -62,6 +62,7 @@ const assets = {
   CH_acm,
   JcorH_acm,
   nihalSP_acm,
+  srm_logo,
 };
 
 export default assets;

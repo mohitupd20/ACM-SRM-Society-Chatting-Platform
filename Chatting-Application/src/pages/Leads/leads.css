@@ -7,17 +7,20 @@
 }
 
 .main-heading {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif; /* Choose your preferred font */
+    font-size: 36px; /* Adjust the font size */
+    font-weight: bold; /* Set the font weight */
+    color: #ffffff; /* Choose a color */
+    text-align: center; /* Align text to the center */
+    text-transform: uppercase; /* Optionally, make text uppercase */
 }
 
 .section-heading {
+    font-family: 'Arial', sans-serif; /* Choose your preferred font */
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 
@@ -81,3 +84,63 @@
         margin: 10px 0;
     }
 }
+.footer {
+    background-color: #1e1e2f;
+    color: #ffffff;
+    padding: 20px 40px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .footer-logo img {
+    width: 80px;
+    height: auto;
+  }
+  
+  .footer-text {
+    flex: 1;
+    margin: 0 20px;
+  }
+  
+  .footerclubheading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #3e53c0; /* Golden color to make it stand out */
+    margin-bottom: 10px;
+  }
+  
+  
+  .footer_para_leads{
+    font-size: 1rem;
+  }
+  
+  .footer-contact {
+    text-align: right;
+  }
+  
+  .footer-contact p {
+    margin: 5px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-contact {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  
