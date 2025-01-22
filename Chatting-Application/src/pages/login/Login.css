@@ -4,6 +4,13 @@
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  background: #1488cc; /* Fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2b32b2,
+    #1488cc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2b32b2, #1488cc);
 }
 
 .logo_login {

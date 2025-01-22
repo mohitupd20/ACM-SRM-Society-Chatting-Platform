@@ -1,5 +1,15 @@
-* {
-  padding: 0;
-  margin: 0;
-  border-style: border-box;
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+img.dot{
+    width: 15px !important;
 }

@@ -1,7 +1,20 @@
-import React from "react";
-import "./chat.css";
-const chat = () => {
-  return <div> </div>;
-};
+import React from 'react'
+import './chat.css'
+import LeftSidebar from '../../Components/LeftSidebar/LeftSidebar'
+import Chatbox from '../../Components/Chatbox/Chatbox'
+import RightSidebar from '../../Components/RightSidebar/RightSidebar'
 
-export default chat;
+``
+const chat = () => {
+  return (
+    <div className='chat'>
+      <div className="chat-container">
+        <LeftSidebar/>
+        <Chatbox/>
+        <RightSidebar/>
+      </div>
+    </div>
+  )
+}
+
+export default chat
