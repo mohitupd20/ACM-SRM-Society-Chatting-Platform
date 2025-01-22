@@ -26,7 +26,7 @@ h2 {
 }
 
 .core-card_acm_leads, .card_acm_leads {
-    background: #2e3c48;
+    background: linear-gradient(to right, #2B32B2, #1488CC);
     color: white;
     border-radius: 15px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
@@ -40,7 +40,7 @@ h2 {
 .core-card_acm_leads:hover, .card_acm_leads:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    background: #42515e;
+    background: #3b6992;
 }
 
 .core-card_acm_leads img, .card_acm_leads img {
@@ -64,4 +64,17 @@ h2 {
 
 .social-icons_acm_leads a:hover {
     color: #bcd9ea;
+}
+
+@media (max-width: 768px) {
+    .row_acm_leads {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .core-card_acm_leads, .card_acm_leads {
+        max-width: 90%;
+        width: 90%;
+        margin: 10px 0;
+    }
 }
