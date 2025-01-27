@@ -1,94 +1,115 @@
+/* Base Styles */
 .profile {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(/profile_back.jpg) no-repeat;
+  background: #000046; /* Fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
+  background: linear-gradient(to right, #1cb5e0, #000046);
   background-size: cover;
+  margin: 0;
 }
+
 .profile-container {
   height: 55vh;
   max-width: 90vw;
+  width: 60vw;
   padding: 20px;
   box-sizing: border-box;
-  width: 60vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background: rgba(0, 0, 0, 0.3); /* Transparent black background */
+  background: rgba(0, 0, 0, 0.2); /* Transparent black background */
   backdrop-filter: blur(50px); /* Backdrop blur effect */
   border-radius: 15px; /* Rounded corners */
 }
+
 .form_profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50vw;
+  width: 35%;
+  font-size: 1.5rem;
 }
+
 .profile-container .form_profile label {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
-  width: 20vw;
+  width: 100%;
   color: white;
-  height: fit-content;
-  font-size: x-large;
+  font-size: 1.6rem;
+  font-family: "Times New Roman", Times, serif;
 }
+
 .form_profile h3 {
   color: white;
   margin-bottom: 30px;
-  font-size: 40px;
+  font-size: 2rem;
+  font-family: "Times New Roman", Times, serif;
 }
+
 .Profile_upload {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  margin-right: 2%;
 }
 
 .input {
-  width: 20vw;
+  width: 100%;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
+
 .input .textarea_profile,
 .input_profile {
   width: 100%;
   margin-top: 10px;
-  padding-left: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
+
 .input input {
-  height: 5vh;
+  height: 40px;
 }
+
 .input textarea {
-  height: 10vh;
+  height: 80px;
 }
+
 .logo_profile {
-  width: 50vw;
-  height: 50vh;
+  width: 50%;
+  max-height: 100%;
 }
 
 .button_profile {
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 1px 2px 2px rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  border-width: 2px;
-  border-style: solid;
-  width: 8vw;
-  height: 5vh;
+  background: rgba(0, 0, 0, 0.3); /* More transparent black */
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+  border: 2px;
+  border-radius: 8px;
+  width: 150px;
+  height: 40px;
   margin-top: 20px;
   color: white;
-  border-radius: 8px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: large;
-  font-family: auto;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button_profile:hover {
+  background: rgba(0, 0, 0, 0.5); /* Slightly darker on hover */
+  transform: scale(1.05); /* Adds a subtle scaling effect */
 }
 
 /* Media Queries for Responsiveness */
@@ -96,41 +117,27 @@
   .profile-container {
     flex-direction: column;
     justify-content: space-between;
-    height: 90vh;
+    height: auto;
     width: 80vw;
     align-items: center;
-    background: rgba(139, 139, 139, 0.1); /* Transparent black background */
-    backdrop-filter: blur(50px);
+    padding: 15px;
   }
+
   .form_profile {
     width: 100%;
-    align-items: center;
   }
-  .profile-container.form_profile.avatar {
-    width: 80%;
-    font-size: large;
-  }
+
   .input {
-    width: 80%;
+    width: 90%;
   }
-  .logo {
+
+  .logo_profile {
     width: 80%;
     height: auto;
   }
-  .input.button_profile {
-    width: 25vw;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background: rgba(139, 139, 139, 0.1);
-  }
-  .input .textarea_profile,
-  .input_profile {
-    border-radius: 4px;
-    width: 90%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
+
+  .button_profile {
+    width: 40%;
   }
 }
 
@@ -138,21 +145,22 @@
   .profile-container {
     padding: 10px;
   }
-  .profile-container .form_profile label {
-    width: 100%;
-    font-size: large;
-    justify-content: space-around;
-    margin-top: 30px;
+
+  .form_profile h3 {
+    font-size: 1.5rem;
   }
+
+  .profile-container .form_profile label {
+    font-size: 1.3rem;
+  }
+
   .input {
     width: 100%;
   }
-  .profile_heading {
-    font-size: x-large;
-  }
+
   .button_profile {
-    width: 25vw;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    width: 40%;
+    height: 50px;
+    font-size: 1.3rem;
   }
 }

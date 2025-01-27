@@ -61,7 +61,8 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   display: inline-block;
   text-align: center;
-  width: 50%; /* Full width for better usability */
+  width: 60%; /* Full width for better usability */
+  height: fit-content;
 }
 
 .login-term {
