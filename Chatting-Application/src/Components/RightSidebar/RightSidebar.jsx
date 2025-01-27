@@ -1,10 +1,11 @@
-import React from 'react'
-import './RightSidebar.css'
-import assets from '../../assets/assets'
+import React from "react";
+import "./RightSidebar.css";
+import assets from "../../assets/assets";
+import { logout } from "../../config/firebase";
 
 const RightSidebar = () => {
   return (
-    <div className='rs'>
+    <div className="rs">
       <div className="rs-profile">
         <img src={assets.profile_img} alt="" />
         <h3>Richard stanford</h3>
@@ -22,9 +23,9 @@ const RightSidebar = () => {
           <img src={assets.pic1} alt="" />
         </div>
       </div>
-      <button>logout</button>
+      <button onClick={() => logout()}>Logout</button>
     </div>
-  )
-}
+  );
+};
 
-export default RightSidebar
+export default RightSidebar;
