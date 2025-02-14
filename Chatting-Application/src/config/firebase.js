@@ -10,18 +10,18 @@ import { toast } from "react-toastify";
 import { signOut } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-
+import { getDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAo9bUKKmQjutj_Bo3IuQWmqxBu9gDUGKM",
-  authDomain: "acm-srm-chatting-platform.firebaseapp.com",
-  projectId: "acm-srm-chatting-platform",
-  storageBucket: "acm-srm-chatting-platform.firebasestorage.app",
-  messagingSenderId: "432540268566",
-  appId: "1:432540268566:web:9b2ea2c25bce84fdad1d37",
+  apiKey: "AIzaSyAL7iZAZIWmnlOFSoti772jWPq_iwaGBps",
+  authDomain: "acm-chatting.firebaseapp.com",
+  projectId: "acm-chatting",
+  storageBucket: "acm-chatting.firebasestorage.app",
+  messagingSenderId: "957591617542",
+  appId: "1:957591617542:web:8e6e0826efa7f40454c387",
 };
 
 // Initialize Firebase

@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { useState } from "react";
-import { doc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { getDoc } from "firebase/firestore";
 import { useEffect } from "react";
@@ -22,9 +22,17 @@ const AppContextProvider = (props) => {
       } else {
         navigate("/profile");
       }
-    } catch (error) {
-      console.log(error);
-    }
+      await updateDoc(userRef, {
+        lastseen: Date.now(),
+      });
+      setInterval(async () => {
+        if (auth.chatUser) {
+          await updateDoc(userRef, {
+            lastseen: Date.now(),
+          });
+        }
+      }, 60000);
+    } catch (error) {}
   };
 
   const value = {

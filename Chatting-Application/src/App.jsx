@@ -17,8 +17,6 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "./config/firebase";
 import { createContext } from "react";
 
-import { useState } from "react";
-
 const App = () => {
   const navigate = useNavigate();
   const { loadUserData } = useContext(AppContext);
