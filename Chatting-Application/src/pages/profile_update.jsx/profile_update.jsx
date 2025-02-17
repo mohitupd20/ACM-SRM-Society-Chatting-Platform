@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import "./profile_update.css";
 import assets from "../../assets/assets";
-import { use } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-
 import { auth, db } from "../../config/firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
+import { upload } from "../../lib/upload";
 
 const ProfileUpdate = () => {
   const navigate = useNavigate();
@@ -14,12 +14,32 @@ const ProfileUpdate = () => {
   const [name, setName] = React.useState("");
   const [bio, setBio] = React.useState("");
   const [uid, setUid] = React.useState("");
+  const [prevImage, setPrevImage] = React.useState("");
+  const { setUserData } = useContext(AppContext);
 
   const profileUpdate = async (event) => {
     event.preventDefault();
     try {
+      if (!prevImage && !image) {
+        toast.error("Please upload an image");
+      }
+      const docRef = doc(db, "users", uid);
+      if (image) {
+        const imgUrl = await upload(image);
+        setPrevImage(imgUrl);
+        await updateDoc(docRef, {
+          avatar: imgUrl,
+          bio: bio,
+          name: name,
+        });
+      }
+      const snap = await getDoc(docRef);
+      setUserData(snap.data());
     } catch (error) {
-      console.log(error);
+      await updateDoc(docRef, {
+        bio: bio,
+        name: name,
+      });
     }
   };
 
@@ -70,7 +90,7 @@ const ProfileUpdate = () => {
           </label>
           <div className="input">
             <input
-              onChange={(e = setName(e.target.value))}
+              onChange={(e) => setName(e.target.value)}
               value={name}
               type="text"
               placeholder="Your Name"

@@ -5,6 +5,8 @@ import { db } from "../config/firebase";
 import { getDoc } from "firebase/firestore";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../config/firebase";
+
 
 export const AppContext = createContext();
 const AppContextProvider = (props) => {
@@ -17,7 +19,7 @@ const AppContextProvider = (props) => {
       const userSnap = await getDoc(userRef);
       const userData = userSnap.data();
       setUserData(userData);
-      if (userData.avatar && userData.name) {
+      if (userData.name) {
         navigate("/chat");
       } else {
         navigate("/profile");
