@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../config/firebase";
 
-
 export const AppContext = createContext();
 const AppContextProvider = (props) => {
   const navigate = useNavigate();

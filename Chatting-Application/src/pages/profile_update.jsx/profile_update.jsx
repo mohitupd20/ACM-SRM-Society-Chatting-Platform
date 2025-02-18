@@ -7,6 +7,8 @@ import { auth, db } from "../../config/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { upload } from "../../lib/upload";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 const ProfileUpdate = () => {
   const navigate = useNavigate();
@@ -32,14 +34,18 @@ const ProfileUpdate = () => {
           bio: bio,
           name: name,
         });
+      } else {
+        await updateDoc(docRef, {
+          bio: bio,
+          name: name,
+        });
       }
       const snap = await getDoc(docRef);
       setUserData(snap.data());
+      navigate("/chat");
     } catch (error) {
-      await updateDoc(docRef, {
-        bio: bio,
-        name: name,
-      });
+      console.log(error);
+      toast.error("Something went wrong");
     }
   };
 
@@ -107,7 +113,17 @@ const ProfileUpdate = () => {
             <button className="button_profile">Update</button>
           </div>
         </form>
-        <img src={assets.logo_icon} alt="" className="logo_profile" />
+        <img
+          src={
+            image
+              ? URL.createObjectURL(image)
+              : prevImage
+              ? prevImage
+              : assets.logo_icon
+          }
+          alt=""
+          className="logo_profile"
+        />
       </div>
     </div>
   );
