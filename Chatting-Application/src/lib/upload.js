@@ -1,33 +1,30 @@
-import { createClient } from "@supabase/supabase-js";
-
-// Initialize Supabase
-const supabaseUrl = "https://vynwflwkgnbkzmtfqcfa.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5bndmbHdrZ25ia3ptdGZxY2ZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk1NzQwNTIsImV4cCI6MjA1NTE1MDA1Mn0.xflINtjvYY0koZdWlc1KaJNasFW-iCN5v4aaXtXzeZM";
-const supabase = createClient(supabaseUrl, supabaseKey);
-
 const upload = async (file) => {
-  const fileName = "profile_pics/${file.name}";
+  const apiKey = "2ba2c000eb664f7f885f1653aad35ed8";
+  const url = "https://api.imgbb.com/1/upload";
 
-  const { data, error } = await supabase.storage
-    .from("ACM-Upload") // Replace with your bucket name
-    .upload(fileName, file, {
-      cacheControl: "3600",
-      upsert: false,
+  const formData = new FormData();
+  formData.append("image", file);
+  formData.append("key", apiKey);
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      body: formData,
     });
 
-  if (error) {
-    console.error("Upload failed:", error.message);
+    const result = await response.json();
+
+    if (result.success) {
+      console.log("Upload successful:", result.data.url);
+      return result.data.url;
+    } else {
+      console.error("Upload failed:", result.error.message);
+      return null;
+    }
+  } catch (error) {
+    console.error("Error uploading file:", error);
     return null;
   }
-
-  console.log("Upload successful:", data);
-
-  // Get the public URL of the uploaded file
-  const { data: publicUrlData } = supabase.storage
-    .from("ACM-Upload") // Replace with your bucket name
-    .getPublicUrl(fileName);
-
-  return publicUrlData.publicUrl;
 };
+
 export { upload };

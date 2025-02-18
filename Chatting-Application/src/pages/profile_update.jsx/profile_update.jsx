@@ -24,22 +24,23 @@ const ProfileUpdate = () => {
     try {
       if (!prevImage && !image) {
         toast.error("Please upload an image");
+        return;
       }
+
       const docRef = doc(db, "users", uid);
+      let imgUrl = prevImage; // Default to previous image
+
       if (image) {
-        const imgUrl = await upload(image);
+        imgUrl = await upload(image); // Upload only if a new image is selected
         setPrevImage(imgUrl);
-        await updateDoc(docRef, {
-          avatar: imgUrl,
-          bio: bio,
-          name: name,
-        });
-      } else {
-        await updateDoc(docRef, {
-          bio: bio,
-          name: name,
-        });
       }
+
+      await updateDoc(docRef, {
+        avatar: imgUrl,
+        bio: bio,
+        name: name,
+      });
+
       const snap = await getDoc(docRef);
       setUserData(snap.data());
       navigate("/chat");
@@ -50,29 +51,22 @@ const ProfileUpdate = () => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(
-      auth,
-      async (user) => {
-        if (user) {
-          setUid(user.uid);
-          const docRef = doc(db, "users", user.uid);
-          const docSnap = await getDoc(docRef);
-          if (docSnap.data().name) {
-            setName(docSnap.data().name);
-          }
-          if (docSnap.data().bio) {
-            setBio(docSnap.data().bio);
-          }
-          if (docSnap.data().avatar) {
-            setImage(docSnap.data().avatar);
-          }
-        } else {
-          navigate("/");
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setUid(user.uid);
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          setName(data.name || "");
+          setBio(data.bio || "");
+          setPrevImage(data.avatar || assets.avatar_icon); // Use prevImage for Firebase URL
         }
-      },
-      []
-    );
-  });
+      } else {
+        navigate("/");
+      }
+    });
+  }, [navigate]);
 
   return (
     <div className="profile">
@@ -88,7 +82,7 @@ const ProfileUpdate = () => {
               hidden
             />
             <img
-              src={image ? URL.createObjectURL(image) : assets.avatar_icon}
+              src={image ? URL.createObjectURL(image) : prevImage}
               alt=""
               className="Profile_upload"
             />
@@ -113,17 +107,7 @@ const ProfileUpdate = () => {
             <button className="button_profile">Update</button>
           </div>
         </form>
-        <img
-          src={
-            image
-              ? URL.createObjectURL(image)
-              : prevImage
-              ? prevImage
-              : assets.logo_icon
-          }
-          alt=""
-          className="logo_profile"
-        />
+        <img src={assets.logo_icon} alt="" className="logo_profile" />
       </div>
     </div>
   );
