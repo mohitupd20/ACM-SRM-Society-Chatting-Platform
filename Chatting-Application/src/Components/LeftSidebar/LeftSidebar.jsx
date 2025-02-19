@@ -19,7 +19,14 @@ import { toast } from "react-toastify";
 
 const LeftSidebar = () => {
   const navigate = useNavigate();
-  const { userData, chatData = [] } = useContext(AppContext);
+  const {
+    userData,
+    chatData = [],
+    chatUser,
+    setChatUser,
+    setMessagesId,
+    messagesId,
+  } = useContext(AppContext);
   const [user, setUser] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
 
@@ -65,7 +72,7 @@ const LeftSidebar = () => {
 
       await updateDoc(doc(chatRef, user.id), {
         chatData: arrayUnion({
-          messageId: newMessageRef.id,
+          messagesId: newMessageRef.id,
           lastMessage: "",
           rId: userData.id,
           updatedAt: Date.now(),
@@ -75,7 +82,7 @@ const LeftSidebar = () => {
 
       await updateDoc(doc(chatRef, userData.id), {
         chatData: arrayUnion({
-          messageId: newMessageRef.id,
+          messagesId: newMessageRef.id,
           lastMessage: "",
           rId: user.id,
           updatedAt: Date.now(),
@@ -87,13 +94,21 @@ const LeftSidebar = () => {
       console.error(error);
     }
   };
-  
+
+  const setChat = async (item) => {
+    setMessagesId(item.messagesId);
+    setChatUser(item);
+  };
 
   return (
     <div className="ls">
       <div className="ls-top">
         <div className="ls-nav">
-          <img src={assets.logo} className="log" alt="" />
+          <div className="ACM">
+            <img src={assets.srm_logo} className="log" alt="" />
+            <h3>ACM Student Chapter</h3>
+          </div>
+
           <div className="menu">
             <img src={assets.menu_icon} alt="" />
             <div className="sub-menu">
@@ -119,11 +134,11 @@ const LeftSidebar = () => {
           </div>
         ) : (
           chatData?.map((item, index) => (
-            <div key={index} className="friends">
+            <div onClick={() => setChat(item)} key={index} className="friends">
               <img src={item.userData?.avatar || "default-avatar.png"} alt="" />
               <div>
                 <p>{item.userData?.name || "Unknown User"}</p>
-                <span>{item.lastMessage || ""}</span>
+                <span className="last">{item.lastMessage || ""}</span>
               </div>
             </div>
           ))
