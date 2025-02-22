@@ -30,7 +30,7 @@ const Navbar = () => {
             width={58}
             height={58}
           />
-          <div className="logo-text">ACM</div>
+          <div className="logo-text">ACM Student Chapter</div>
         </div>
 
         {/* Navigation Links */}
@@ -45,9 +45,11 @@ const Navbar = () => {
           >
             Team
           </a>
-          <a onClick={() => navigate("/Event")}
+          <a
+            onClick={() => navigate("/Event")}
             className="nav-link"
-            style={{ cursor: "pointer" }}>
+            style={{ cursor: "pointer" }}
+          >
             Events
           </a>
           <a href="/contact" className="nav-link">

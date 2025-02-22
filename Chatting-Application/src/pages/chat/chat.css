@@ -3,7 +3,6 @@
   background: #e0f7ff; /* Fallback for old browsers */
   background: -webkit-linear-gradient(to right, #80dfff, #b3c6ff);
   background: linear-gradient(to right, #80dfff, #b3c6ff);
-  background-size: cover;
   display: grid;
   place-items: center;
 }

@@ -3,11 +3,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-
+  background: #e0f7ff; /* Fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #80dfff, #b3c6ff);
+  background: linear-gradient(to right, #80dfff, #b3c6ff);
   background-size: cover;
   border-radius: 10px;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
   height: 72px;
+  width: 100%;
   padding: 0 16px;
   color: white;
   position: sticky;
@@ -18,8 +21,9 @@
 .logo-container {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   gap: 10px;
-  width: 216px;
+  width: 50%;
   height: 58px;
 }
 
@@ -30,7 +34,7 @@
 }
 
 .logo-text {
-  width: 128px;
+  width: 80%;
   height: 38px;
   font-weight: 600;
   font-size: 32px;
@@ -76,4 +80,3 @@
 .nav-link:hover::after {
   width: 100%;
 }
-

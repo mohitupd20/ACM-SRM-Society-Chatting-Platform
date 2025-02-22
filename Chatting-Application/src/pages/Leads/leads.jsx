@@ -1,7 +1,7 @@
-import React from 'react';
-import './leads.css';
+import React from "react";
+import "./leads.css";
 import assets from "../../assets/assets";
-
+import Navbar from "../Navbar/navbar";
 const Leads = () => {
   const coreTeamData_acm_leads = [
     {
@@ -141,6 +141,7 @@ const Leads = () => {
 
   return (
     <>
+      <Navbar />
       <div className="leads-container_acm_leads">
         <h1 className="main-heading">Our Brilliant Team</h1>
 
@@ -155,13 +156,25 @@ const Leads = () => {
                 <p>{core.position}</p>
                 <p>SRM ACM</p>
                 <div className="social-icons_acm_leads">
-                  <a href={core.social.linkedin} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={core.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href={core.social.github} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={core.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href={core.social.instagram} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={core.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -176,13 +189,25 @@ const Leads = () => {
                 <p>{core.position}</p>
                 <p>SRM ACM</p>
                 <div className="social-icons_acm_leads">
-                  <a href={core.social.linkedin} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={core.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href={core.social.github} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={core.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href={core.social.instagram} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={core.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -202,13 +227,25 @@ const Leads = () => {
                 <p>{person.position}</p>
                 <p>SRM ACM</p>
                 <div className="social-icons_acm_leads">
-                  <a href={person.social.linkedin} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={person.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href={person.social.github} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={person.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href={person.social.instagram} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={person.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -223,13 +260,25 @@ const Leads = () => {
                 <p>{person.position}</p>
                 <p>SRM ACM</p>
                 <div className="social-icons_acm_leads">
-                  <a href={person.social.linkedin} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={person.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a href={person.social.github} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={person.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href={person.social.instagram} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={person.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -238,24 +287,6 @@ const Leads = () => {
           </div>
         </div>
       </div>
-
-      {/* Footer Section */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-logo">
-            <img src={assets.srm_logo} alt="SRM ACM Logo" />
-          </div>
-          <div className="footer-text">
-          <h3 className="footerclubheading">SRM ACM Student Chapter </h3>
-            <p class="footer_para_leads">Code, coffee, and collaboration by your buddies at SRM ACM</p>
-          </div>
-          <div className="footer-contact">
-            <p class="footer_para_leads" >Contact us:</p>
-            <p class="footer_para_leads" >Email: acmsrmktr@gmail.com</p>
-            <p class="footer_para_leads" >Phone: +91 98407 75825</p>
-          </div>
-        </div>
-      </footer>
     </>
   );
 };

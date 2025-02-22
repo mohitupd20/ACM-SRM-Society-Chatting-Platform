@@ -1,146 +1,95 @@
 .leads-container_acm_leads {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #0e2a47, #152d42);
-    color: white;
-    padding: 20px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e0f7ff; /* Fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #80dfff, #b3c6ff);
+  background: linear-gradient(to right, #80dfff, #b3c6ff);
+  background-size: cover;
+  color: #1583c3;
+  padding: 20px;
 }
 
 .main-heading {
-    font-family: 'Arial', sans-serif; /* Choose your preferred font */
-    font-size: 36px; /* Adjust the font size */
-    font-weight: bold; /* Set the font weight */
-    color: #ffffff; /* Choose a color */
-    text-align: center; /* Align text to the center */
-    text-transform: uppercase; /* Optionally, make text uppercase */
+  font-family: "Times New Roman", Times, serif; /* Choose your preferred font */
+  font-size: 36px; /* Adjust the font size */
+  font-weight: bold; /* Set the font weight */
+  color: black; /* Choose a color */
+  text-align: center; /* Align text to the center */
+  text-transform: uppercase; /* Optionally, make text uppercase */
 }
 
 .section-heading {
-    font-family: 'Arial', sans-serif; /* Choose your preferred font */
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 30px 0;
+  font-family: "Times New Roman", Times, serif; /* Choose your preferred font */
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 30px 0;
 }
-
 
 .row_acm_leads {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
 }
 
-.core-card_acm_leads, .card_acm_leads {
-    background: linear-gradient(to right, #2B32B2, #1488CC);
-    color: white;
-    border-radius: 15px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    max-width: 250px;
-    flex-grow: 1;
+.core-card_acm_leads,
+.card_acm_leads {
+  background: rgba(0, 0, 0, 0.2); /* Transparent black background */
+  backdrop-filter: blur(50px); /* Backdrop blur effect */
+  border-radius: 15px; /* Rounded corners */
+  color: black;
+  border-radius: 15px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 250px;
+  flex-grow: 1;
 }
 
-.core-card_acm_leads:hover, .card_acm_leads:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    background: #3b6992;
+.core-card_acm_leads:hover,
+.card_acm_leads:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  color: black;
 }
 
-.core-card_acm_leads img, .card_acm_leads img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    border: 3px solid #0d85c1;
+.core-card_acm_leads img,
+.card_acm_leads img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #0d85c1;
 }
 
 .social-icons_acm_leads {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .social-icons_acm_leads a {
-    margin: 0 10px;
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s;
+  margin: 0 10px;
+  color: #1583c3;
+  font-size: 1.5rem;
+  transition: color 0.3s;
 }
 
 .social-icons_acm_leads a:hover {
-    color: #bcd9ea;
+  color: black;
 }
 
 @media (max-width: 768px) {
-    .row_acm_leads {
-        flex-direction: column;
-        align-items: center;
-    }
+  .row_acm_leads {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .core-card_acm_leads, .card_acm_leads {
-        max-width: 90%;
-        width: 90%;
-        margin: 10px 0;
-    }
+  .core-card_acm_leads,
+  .card_acm_leads {
+    max-width: 90%;
+    width: 90%;
+    margin: 10px 0;
+  }
 }
-.footer {
-    background-color: #1e1e2f;
-    color: #ffffff;
-    padding: 20px 40px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .footer-logo img {
-    width: 80px;
-    height: auto;
-  }
-  
-  .footer-text {
-    flex: 1;
-    margin: 0 20px;
-  }
-  
-  .footerclubheading {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #3e53c0; /* Golden color to make it stand out */
-    margin-bottom: 10px;
-  }
-  
-  
-  .footer_para_leads{
-    font-size: 1rem;
-  }
-  
-  .footer-contact {
-    text-align: right;
-  }
-  
-  .footer-contact p {
-    margin: 5px 0;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .footer-contact {
-      text-align: center;
-      margin-top: 10px;
-    }
-  }
-  
