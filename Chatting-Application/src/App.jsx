@@ -16,6 +16,7 @@ import { AppContext } from "./context/AppContext";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./config/firebase";
 import { createContext } from "react";
+import Event from "./pages/events/event"
 
 const App = () => {
   const navigate = useNavigate();
@@ -39,6 +40,8 @@ const App = () => {
         <Route path="/chat" element={<Chat />} />
         <Route path="/profile" element={<ProfileUpdate />} />
         <Route path="/leads" element={<Leads />} />
+        <Route path="/event" element={<Event />} />
+        
       </Routes>
     </>
   );

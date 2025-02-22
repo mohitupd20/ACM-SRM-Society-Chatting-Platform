@@ -8,6 +8,7 @@ import {
 import "./navbar.css";
 import assets from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
+import Event from "../events/event";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +46,9 @@ const Navbar = () => {
           >
             Team
           </a>
-          <a href="/events" className="nav-link">
+          <a onClick={() => navigate("/Event")}
+            className="nav-link"
+            style={{ cursor: "pointer" }}>
             Events
           </a>
           <a href="/contact" className="nav-link">

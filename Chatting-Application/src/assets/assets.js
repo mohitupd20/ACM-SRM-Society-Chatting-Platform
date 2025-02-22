@@ -31,6 +31,9 @@ import JcorH_acm from "./JcorH_acm.jpg";
 import nihalSP_acm from "./nihalSP_acm.jpg";
 import srm_logo from "./srm_logo.png";
 import chat_app from "./chat_app.svg";
+import acm_event1 from "./acm_event1.jpg";
+import acm_event2 from "./acm_event2.jpg";
+import acm_event3 from "./acm_event3.jpg";
 const assets = {
   avatar_icon,
   gallery_icon,
@@ -66,7 +69,9 @@ const assets = {
   srm_logo,
   chat_app,
   logo,
-  
+  acm_event1,
+  acm_event2,
+  acm_event3,
 };
 
 export default assets;
