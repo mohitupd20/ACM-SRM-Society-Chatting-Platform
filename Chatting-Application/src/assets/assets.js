@@ -30,6 +30,7 @@ import CH_acm from "./CH_acm.jpg";
 import JcorH_acm from "./JcorH_acm.jpg";
 import nihalSP_acm from "./nihalSP_acm.jpg";
 import srm_logo from "./srm_logo.png";
+import chat_app from "./chat_app.svg";
 const assets = {
   avatar_icon,
   gallery_icon,
@@ -63,6 +64,9 @@ const assets = {
   JcorH_acm,
   nihalSP_acm,
   srm_logo,
+  chat_app,
+  logo,
+  
 };
 
 export default assets;

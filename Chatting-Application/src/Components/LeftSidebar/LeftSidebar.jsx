@@ -12,6 +12,7 @@ import {
   updateDoc,
   arrayUnion,
   serverTimestamp,
+  getDoc,
 } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { AppContext } from "../../context/AppContext";
@@ -96,8 +97,22 @@ const LeftSidebar = () => {
   };
 
   const setChat = async (item) => {
-    setMessagesId(item.messagesId);
-    setChatUser(item);
+    try {
+      setMessagesId(item.messagesId);
+      setChatUser(item);
+      const userChatsRef = doc(db, "chats", userData.id);
+      const userChatsSnap = await getDoc(userChatsRef);
+      const userChatData = userChatsSnap.data();
+      const chatIndex = userChatData.chatData.findIndex(
+        (c) => c.messagesId == item.messagesId
+      );
+      userChatData.chatData[chatIndex].messageSeen = true;
+      await updateDoc(userChatsRef, {
+        chatData: userChatData.chatData,
+      });
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (
@@ -133,8 +148,16 @@ const LeftSidebar = () => {
             <img src={user.avatar} alt="" /> <p>{user.name}</p>
           </div>
         ) : (
-          chatData?.map((item, index) => (
-            <div onClick={() => setChat(item)} key={index} className="friends">
+          chatData.map((item, index) => (
+            <div
+              onClick={() => setChat(item)}
+              key={index}
+              className={`friends ${
+                item.messageSeen || item.messagesId === messagesId
+                  ? ""
+                  : "border"
+              }`}
+            >
               <img src={item.userData?.avatar || "default-avatar.png"} alt="" />
               <div>
                 <p>{item.userData?.name || "Unknown User"}</p>

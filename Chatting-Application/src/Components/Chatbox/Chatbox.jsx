@@ -13,6 +13,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { toast } from "react-toastify";
+import { upload } from "../../lib/upload";
 
 const Chatbox = () => {
   const { userData, messagesId, chatUser, messages, setMessages } =
@@ -56,6 +57,42 @@ const Chatbox = () => {
     setInput("");
   };
 
+  const sendImage = async (e) => {
+    try {
+      const fileUrl = await upload(e.target.files[0]);
+      if (fileUrl && messagesId) {
+        await updateDoc(doc(db, "messages", messagesId), {
+          messages: arrayUnion({
+            sId: userData.id,
+            image: fileUrl,
+            createdAt: new Date(),
+          }),
+        });
+        const userIds = [chatUser.rId, userData.id];
+        userIds.forEach(async (id) => {
+          const userChatsRef = doc(db, "chats", id);
+          const userChatsSnap = await getDoc(userChatsRef);
+          if (userChatsSnap.exists()) {
+            const userChatData = userChatsSnap.data();
+            const chatIndex = userChatData.chatData.findIndex(
+              (c) => c.messagesId == messagesId
+            );
+            userChatData.chatData[chatIndex].lastMessage = "Image";
+            userChatData.chatData[chatIndex].updatedAt = Date.now();
+            if (userChatData.chatData[chatIndex].rId == userData.id) {
+              userChatData.chatData[chatIndex].messageSeen = false;
+            }
+            await updateDoc(userChatsRef, {
+              chatData: userChatData.chatData,
+            });
+          }
+        });
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
   const convertTimeStamp = (timestamp) => {
     let date = timestamp.toDate();
     const hour = date.getHours();
@@ -95,7 +132,12 @@ const Chatbox = () => {
             key={index}
             className={msg.sId == userData.id ? "s-msg" : "r-msg"}
           >
-            <p className="msg">{msg.text}</p>
+            {msg["image"] ? (
+              <img className="msg-image" src={msg.image} alt="" />
+            ) : (
+              <p className="msg">{msg.text}</p>
+            )}
+
             <div>
               <img
                 src={
@@ -118,7 +160,13 @@ const Chatbox = () => {
           type="text"
           placeholder="Send a Message"
         />
-        <input type="file" id="image" accept="image/png, image.jpeg/" hidden />
+        <input
+          onChange={sendImage}
+          type="file"
+          id="image"
+          accept="image/png, image.jpeg/"
+          hidden
+        />
         <label htmlFor="image">
           <img src={assets.gallery_icon} alt="" />
         </label>
@@ -127,8 +175,9 @@ const Chatbox = () => {
     </div>
   ) : (
     <div className="chat_welcome">
-      <img src={assets.logo} alt="" />
-      <p className="Chat_Wel">ACM Student Chapter Chatting Platform</p>
+      {/* <img src={assets.logo} alt="" /> */}
+      <p className="Chat_Wel1">ACM Student Chapter </p>
+      <p className="Chat_Wel1">Chatting Platform</p>
     </div>
   );
 };

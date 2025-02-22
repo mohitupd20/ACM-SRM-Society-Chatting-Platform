@@ -128,13 +128,19 @@
     rgba(28, 181, 224, 0.7),
     rgba(0, 0, 70, 0.2),
     rgba(28, 181, 224, 0.7)
-);
+  );
   color: white;
   padding-bottom: 30px;
 }
-.Chat_Wel {
-  margin-top: 20px;
+
+.Chat_Wel1 {
   font-family: cursive;
   font-weight: 900;
-  font-size: x-large;
+  font-size: xx-large;
+}
+
+.msg-image {
+  max-width: 230px;
+  margin-bottom: 30px;
+  border-radius: 10px;
 }

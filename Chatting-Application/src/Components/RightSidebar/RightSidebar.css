@@ -11,6 +11,7 @@
   overflow-y: scroll;
 }
 .rs-profile {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center; /* Centers the profile picture and name horizontally */
@@ -18,7 +19,7 @@
 }
 
 .rs-profile img {
-  width: 110px;
+  width: 150px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   margin-bottom: 10px; /* Add space between the profile picture and name */
@@ -51,7 +52,7 @@
 }
 
 .rs-media div {
-  max-width: 180px;
+  max-width: 200px;
   overflow-y: scroll;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -77,4 +78,16 @@
   padding: 10px 65px;
   border-radius: 20px;
   cursor: pointer;
+}
+.right-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+.chat_app {
+  max-width: 230px;
+  margin-bottom: 30px;
+  border-radius: 10px;
 }

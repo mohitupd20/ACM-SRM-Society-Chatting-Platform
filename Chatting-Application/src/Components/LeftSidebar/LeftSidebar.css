@@ -139,3 +139,10 @@
   align-items: center;
   font-size: medium;
 }
+.friends.border img {
+  border: 2px solid red;
+}
+.friends.friends.border div span {
+  color: red;
+  font-weight: 500;
+}
