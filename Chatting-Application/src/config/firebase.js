@@ -68,4 +68,26 @@ const logout = async () => {
     toast.error(error.code.split("/")[1].split("-").join(" "));
   }
 };
-export { signup, login, logout, auth, db };
+
+const resetPassword = async (email) => {
+  if (!email) {
+    return toast.error("Email is required");
+    return null;
+  }
+  try {
+    const userRef = doc(db, "users");
+    const q = query(userRef, where("email", "==", email));
+    const querySnap = await getDocs(q);
+    if (!querySnap.empty) {
+      await sendPasswordResetEmail(auth, email);
+      toast.success("Reset password link sent to your email");
+    } else {
+      toast.error("Email not found");
+    }
+  } catch (error) {
+    console.log(error);
+    toast.error(error.code.split("/")[1].split("-").join(" "));
+  }
+};
+
+export { signup, login, logout, auth, db, resetPassword };

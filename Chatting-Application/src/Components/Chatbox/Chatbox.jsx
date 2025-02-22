@@ -4,6 +4,7 @@ import assets from "../../assets/assets";
 import { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 
+
 import {
   onSnapshot,
   doc,
@@ -121,7 +122,9 @@ const Chatbox = () => {
         <img src={chatUser.userData.avatar} alt="" />
         <p>
           {chatUser.userData.name}
-          <img className="dot" src={assets.green_dot} alt="" />
+          {Date.now() - chatUser.userData.lastseen < 700000 ? (
+            <img className="dot" src={assets.green_dot} alt="" />
+          ) : null}
         </p>
         <img src={assets.help_icon} className="help" alt="" />
       </div>

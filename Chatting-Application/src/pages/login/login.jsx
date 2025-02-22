@@ -3,7 +3,7 @@ import "./Login.css";
 import { useState } from "react";
 import assets from "../../assets/assets";
 import logo_big from "../../assets/logo_big.png";
-import { signup, login } from "../../config/firebase";
+import { signup, login, resetPassword } from "../../config/firebase";
 
 const Login = () => {
   const [current, setCurrent] = useState("Sign Up");

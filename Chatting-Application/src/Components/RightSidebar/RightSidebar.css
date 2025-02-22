@@ -26,13 +26,16 @@
 }
 
 .rs-profile h3 {
+  flex: 1;
   font-size: 18px;
   font-weight: 400;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 5px;
   margin: 5px 0px;
+}
+.rs-profile h3 img {
+  margin-top: 8px;
 }
 
 .rs-profile p {

@@ -37,6 +37,10 @@
   gap: 5px;
 }
 
+.chat-user p img {
+  margin-top: 5px;
+}
+
 .chat-input {
   display: flex;
   align-items: center;
