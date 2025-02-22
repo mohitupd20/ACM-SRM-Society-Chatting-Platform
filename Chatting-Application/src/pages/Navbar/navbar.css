@@ -1,0 +1,79 @@
+/* Desktop Navbar */
+.navbar-desktop {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-size: cover;
+  border-radius: 10px;
+  backdrop-filter: blur(50px);
+  height: 72px;
+  padding: 0 16px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 216px;
+  height: 58px;
+}
+
+.logo-image {
+  object-fit: contain;
+  width: 58px;
+  height: 58px;
+}
+
+.logo-text {
+  width: 128px;
+  height: 38px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38.4px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 376px;
+  height: 49px;
+  gap: 24px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 67px;
+  height: 29px;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28.8px;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
