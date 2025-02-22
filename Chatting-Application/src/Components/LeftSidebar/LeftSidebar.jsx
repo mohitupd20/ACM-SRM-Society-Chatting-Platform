@@ -120,7 +120,6 @@ const LeftSidebar = () => {
       <div className="ls-top">
         <div className="ls-nav">
           <div className="ACM">
-            <img src={assets.srm_logo} className="log" alt="" />
             <h3>ACM Student Chapter</h3>
           </div>
 

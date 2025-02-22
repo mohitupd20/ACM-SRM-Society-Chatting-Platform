@@ -16,15 +16,17 @@
   justify-content: space-between;
   align-items: center;
 }
-
-.ls-nav .logo {
-  max-width: 140px;
+.ls-nav h3 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: x-large;
+  margin-left: 10px;
 }
 
 .ls-nav .menu img {
   max-height: 20px;
   opacity: 0.6;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .ls-search {
@@ -131,14 +133,9 @@
 .log {
   width: 17%;
 }
-.ACM {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: medium;
-}
+/* .ACM {
+  margin-left: 25px;
+} */
 .friends.border img {
   border: 2px solid red;
 }

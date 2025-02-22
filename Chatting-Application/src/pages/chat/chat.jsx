@@ -4,7 +4,7 @@ import LeftSidebar from "../../Components/LeftSidebar/LeftSidebar";
 import Chatbox from "../../Components/Chatbox/Chatbox";
 import RightSidebar from "../../Components/RightSidebar/RightSidebar";
 import { AppContext } from "../../context/AppContext";
-
+import Navbar from "../Navbar/navbar";
 
 const Chat = () => {
   const { chatData, userData } = useContext(AppContext); // Assuming AppContext provides an object
@@ -18,6 +18,7 @@ const Chat = () => {
 
   return (
     <div className="chat">
+      <Navbar />
       {loading ? (
         <p className="loading">Loading...</p>
       ) : (
