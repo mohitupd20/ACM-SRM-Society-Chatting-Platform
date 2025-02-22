@@ -8,7 +8,6 @@ import {
 import "./navbar.css";
 import assets from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
-import Event from "../events/event";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
