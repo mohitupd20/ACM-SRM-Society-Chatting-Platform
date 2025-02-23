@@ -99,7 +99,7 @@ const Navbar = () => {
           </a>
           <a
             onClick={() => {
-              navigate("/aboutUs");
+              navigate("/about");
               toggleMenu();
             }}
             className="nav-link"
