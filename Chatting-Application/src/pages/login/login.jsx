@@ -25,6 +25,7 @@ const Login = () => {
     <div className="login">
       <img src={assets.logo_big} alt="" className="logo_login" />
       <form className="login_form" onSubmit={onSubmitHandler}>
+        <h1 className="login_acm">ACM Chatting Platform</h1>
         <h2>{current}</h2>
         {current == "Sign Up" ? (
           <input
@@ -54,7 +55,7 @@ const Login = () => {
         />
         <div className="login-term">
           <input type="checkbox" required />
-          <p>Terms & conditions</p>
+          <p> Agree to terms & conditions</p>
         </div>
         <button className="button_login" type="submit">
           {current == "Sign Up" ? "Create" : "Login"}
