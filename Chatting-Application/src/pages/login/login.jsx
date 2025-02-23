@@ -54,10 +54,10 @@ const Login = () => {
         />
         <div className="login-term">
           <input type="checkbox" required />
-          <p>Agree to the terms & conditions</p>
+          <p>Terms & conditions</p>
         </div>
         <button className="button_login" type="submit">
-          {current == "Sign Up" ? "Create Account" : "Login Now"}
+          {current == "Sign Up" ? "Create" : "Login"}
         </button>
 
         <div className="login-toggle">

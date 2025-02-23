@@ -49,20 +49,30 @@
 
 .button_login {
   margin-top: 20px;
-  background-color: #1a1a1a;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
+  background: linear-gradient(to right, #2b32b2, #1488cc);
   color: #fff;
-  font-weight: 400;
+  font-weight: 500;
   border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 6px;
+  padding: 14px 28px;
+  font-size: 18px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease-in-out;
   display: inline-block;
   text-align: center;
-  width: 60%; /* Full width for better usability */
+  width: 50%;
   height: fit-content;
+  letter-spacing: 1px;
+
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Hover Effect */
+.button_login:hover {
+  background: linear-gradient(to right, #b3c6ff, #80dfff);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .login-term {
