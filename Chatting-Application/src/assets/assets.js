@@ -34,6 +34,9 @@ import chat_app from "./chat_app.svg";
 import acm_event1 from "./acm_event1.jpg";
 import acm_event2 from "./acm_event2.jpg";
 import acm_event3 from "./acm_event3.jpg";
+import about_1 from "./about_1.jpg";
+import about_3 from "./about_3.jpg";
+import about_2 from "./about_2.jpg";
 const assets = {
   avatar_icon,
   gallery_icon,
@@ -72,6 +75,9 @@ const assets = {
   acm_event1,
   acm_event2,
   acm_event3,
+  about_1,
+  about_3,
+  about_2,
 };
 
 export default assets;

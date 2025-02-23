@@ -1,31 +1,48 @@
-/* General Styles */
-.about-container {
+.leads-container_acm_leads {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #80dfff, #b3c6ff);
+  background-size: cover;
+  color: #1583c3;
   padding: 20px;
-  text-align: center;
-  background-color: #f9f9f9;
   min-height: 100vh;
+  text-align: center;
 }
 
+/* About Title Styling */
 .about-title {
+  margin-bottom: 20px; /* Space between heading and cards */
   font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 40px;
 }
 
-/* Cards Grid */
+/* Team Quote Styling */
+.team-quote {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px; /* Space between quote and cards */
+}
+
+/* Cards Grid Layout */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 0 20px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-/* Flip Card */
+/* Flip Card Styling */
 .flip-card {
   background-color: transparent;
   perspective: 1000px;
   width: 100%;
   height: 300px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.flip-card:hover {
+  transform: scale(1.05);
 }
 
 .flip-card-inner {
@@ -37,89 +54,152 @@
   transform-style: preserve-3d;
 }
 
-.flip-card.flip .flip-card-inner {
+/* Enable Flip Effect on Mobile (Tap Instead of Hover) */
+@media (hover: none) {
+  .flip-card:active .flip-card-inner,
+  .flip-card:focus .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Front and Back Side */
-.flip-card-front,
-.flip-card-back {
+.flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(8, 104, 123, 0.711);
 }
 
-/* Front Side */
 .flip-card-front {
-  background-color: white;
+  background-color: #f1f1f1;
   color: #333;
+}
+
+.flip-card-back {
+  background-color: rgba(0, 119, 181, 0.9);
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .card-image {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .card-name {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .card-dept {
   font-size: 1rem;
-  color: #666;
+  color: #25262a;
   margin-bottom: 5px;
 }
 
 .card-regNo {
   font-size: 0.9rem;
-  color: #888;
+  color: #25262a;
 }
 
-/* Back Side */
-.flip-card-back {
-  background-color: #0077b5; /* LinkedIn Blue */
-  color: white;
-  transform: rotateY(180deg);
-}
-
+/* Social Icons */
 .social-icons {
   display: flex;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .social-icons a {
-  color: white;
+  color: #333;
   font-size: 1.5rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-icons a:hover {
   transform: scale(1.2);
+  color: #0077b5;
 }
 
-/* Mobile Animation */
-@media (max-width: 768px) {
+.flip-card-back .social-icons a {
+  color: white;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .team-quote {
+    font-size: 1.8rem;
+    margin-top: 20px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* More flexible layout */
+    gap: 15px;
+  }
+
   .flip-card {
-    height: 250px;
+    height: 280px;
   }
 
-  .flip-card-inner {
-    transition: transform 0.8s ease-in-out;
+  .card-name {
+    font-size: 1.3rem;
   }
 
-  .flip-card.flip .flip-card-inner {
-    transform: rotateY(180deg);
+  .card-dept,
+  .card-regNo {
+    font-size: 0.9rem;
+  }
+
+  .social-icons a {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .team-quote {
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .flip-card {
+    height: 260px;
+  }
+
+  .card-name {
+    font-size: 1.2rem;
+  }
+
+  .card-dept,
+  .card-regNo {
+    font-size: 0.85rem;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
   }
 }
