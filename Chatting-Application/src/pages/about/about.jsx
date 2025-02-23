@@ -8,7 +8,7 @@ const About = () => {
 
         name: "Mohit Upadhyay",
         dept: "CINTEL",
-        regNo: "RA231XXXXXXXX",
+        regNo: "RA2311033010168",
         image: assets.about_2,
         social: {
           github: "https://github.com/mohitupd20",
@@ -40,13 +40,13 @@ const About = () => {
     },
     {
       name: "Lokesh Janti",
-      dept: "Data Science",
-      regNo: "RAXXXXXXXXXYXY",
-      image: "/assets/bob-brown.jpg",
+      dept: "CINTEL",
+      regNo: "RA2311026010715",
+      image: assets.about_4,
       social: {
-        github: "#",
-        linkedin: "#",
-        instagram: "#",
+        github: "https://github.com/LokeshJasti05",
+        linkedin: "https://www.linkedin.com/in/lokesh-jasti-66a6a728b/",
+        instagram: "https://www.instagram.com/jasti._.lokesh/",
       },
     },
   ];

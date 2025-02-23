@@ -37,6 +37,7 @@ import acm_event3 from "./acm_event3.jpg";
 import about_1 from "./about_1.jpg";
 import about_3 from "./about_3.jpg";
 import about_2 from "./about_2.jpg";
+import about_4 from "./about_4.jpg";
 const assets = {
   avatar_icon,
   gallery_icon,
@@ -78,6 +79,7 @@ const assets = {
   about_1,
   about_3,
   about_2,
+  about_4,
 };
 
 export default assets;
