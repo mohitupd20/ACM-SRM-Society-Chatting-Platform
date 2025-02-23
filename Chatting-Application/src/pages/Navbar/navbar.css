@@ -7,7 +7,6 @@
   background: -webkit-linear-gradient(to right, #80dfff, #b3c6ff);
   background: linear-gradient(to right, #80dfff, #b3c6ff);
   background-size: cover;
-  border-radius: 10px;
   backdrop-filter: blur(10px);
   height: 72px;
   width: 100%;
@@ -79,4 +78,70 @@
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+/* Mobile Navbar */
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.navbar-mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background: #e0f7ff;
+  background: -webkit-linear-gradient(to right, #80dfff, #b3c6ff);
+  background: linear-gradient(to right, #80dfff, #b3c6ff);
+  width: 100%;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  z-index: 49;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.navbar-mobile.open {
+  max-height: 300px; /* Adjust based on content */
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .navbar-mobile {
+    display: flex;
+    margin-top: 10%;
+  }
+  .logo-text {
+    font-size: 0; /* Hide the original text */
+  }
+
+  .logo-text::before {
+    content: "ACM"; /* Show "ACM" on mobile */
+    font-size: 24px; /* Adjust font size for mobile */
+    font-weight: 600;
+    line-height: 38.4px;
+    font-family: "Times New Roman", Times, serif;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
 }

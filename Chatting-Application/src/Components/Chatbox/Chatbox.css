@@ -148,3 +148,53 @@
   margin-bottom: 30px;
   border-radius: 10px;
 }
+.chat-user .arrow {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .chat-box {
+    width: 90vw;
+    height: 85vh;
+    justify-content: center;
+  }
+  .chat-user .arrow {
+    display: block;
+  }
+  .chat-user .help {
+    display: none;
+  }
+  .chat-welcome {
+    display: none;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .chat-msg {
+    height: calc(
+      100% - 120px
+    ); /* Adjust message area height to accommodate input */
+    padding-bottom: 120px; /* Add padding to prevent messages from being hidden behind input */
+    overflow-y: scroll; /* Ensure messages are scrollable */
+  }
+
+  .msg {
+    max-width: 70%; /* Adjust message width */
+  }
+
+  .chat-input {
+    position: fixed; /* Fix input at the bottom */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 10px;
+    z-index: 100; /* Ensure input is above other elements */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+  }
+
+  .chat-input input {
+    width: 70%; /* Adjust input width */
+  }
+}

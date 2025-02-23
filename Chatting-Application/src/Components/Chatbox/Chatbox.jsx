@@ -4,7 +4,6 @@ import assets from "../../assets/assets";
 import { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 
-
 import {
   onSnapshot,
   doc,
@@ -17,8 +16,15 @@ import { toast } from "react-toastify";
 import { upload } from "../../lib/upload";
 
 const Chatbox = () => {
-  const { userData, messagesId, chatUser, messages, setMessages } =
-    useContext(AppContext);
+  const {
+    userData,
+    messagesId,
+    chatUser,
+    messages,
+    setMessages,
+    chatVisiblity,
+    setChatVisiblity,
+  } = useContext(AppContext);
 
   const [input, setInput] = useState("");
 
@@ -117,7 +123,7 @@ const Chatbox = () => {
   }, [messagesId]);
 
   return chatUser ? (
-    <div className="chat-box">
+    <div className={`chat-box ${chatVisiblity ? "" : "hidden"}`}>
       <div className="chat-user">
         <img src={chatUser.userData.avatar} alt="" />
         <p>
@@ -127,6 +133,12 @@ const Chatbox = () => {
           ) : null}
         </p>
         <img src={assets.help_icon} className="help" alt="" />
+        <img
+          onClick={() => setChatVisiblity(false)}
+          src={assets.arrow_icon}
+          className="arrow"
+          alt=""
+        />
       </div>
 
       <div className="chat-msg">
@@ -177,7 +189,7 @@ const Chatbox = () => {
       </div>
     </div>
   ) : (
-    <div className="chat_welcome">
+    <div className={`chat_welcome ${chatVisiblity ? "" : "hidden"}`}>
       {/* <img src={assets.logo} alt="" /> */}
       <p className="Chat_Wel1">ACM Student Chapter </p>
       <p className="Chat_Wel1">Chatting Platform</p>

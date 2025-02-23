@@ -14,9 +14,11 @@ import {
   serverTimestamp,
   getDoc,
 } from "firebase/firestore";
-import { db } from "../../config/firebase";
+import { db, logout } from "../../config/firebase";
 import { AppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
+import { use } from "react";
+import { useEffect } from "react";
 
 const LeftSidebar = () => {
   const navigate = useNavigate();
@@ -27,6 +29,8 @@ const LeftSidebar = () => {
     setChatUser,
     setMessagesId,
     messagesId,
+    chatVisiblity,
+    setChatVisiblity,
   } = useContext(AppContext);
   const [user, setUser] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
@@ -90,6 +94,18 @@ const LeftSidebar = () => {
           messageSeen: true,
         }),
       });
+      const uSnap = await getDoc(doc(db, "users", user.id));
+      const uData = uSnap.data();
+      setChat({
+        messagesId: newMessageRef.id,
+        lastMessage: "",
+        rId: user.id,
+        updatedAt: Date.now(),
+        messageSeen: true,
+        userData: uData,
+      });
+      setShowSearch(false);
+      setChatVisiblity(true);
     } catch (error) {
       toast.error("Something went wrong");
       console.error(error);
@@ -110,13 +126,26 @@ const LeftSidebar = () => {
       await updateDoc(userChatsRef, {
         chatData: userChatData.chatData,
       });
+      setChatVisiblity(true);
     } catch (error) {
       toast.error(error.message);
     }
   };
 
+  useEffect(() => {
+    const updateChatUserData = async () => {
+      if (chatUser) {
+        const userRef = doc(db, "users", chatUser.chatData.id);
+        const userSnap = await getDoc(userRef);
+        const userData = userSnap.data();
+        setChatUser((prev) => ({ ...prev, userData: userData }));
+      }
+    };
+    updateChatUserData();
+  }, [chatData]);
+
   return (
-    <div className="ls">
+    <div className={`ls ${chatVisiblity ? "hidden" : ""}`}>
       <div className="ls-top">
         <div className="ls-nav">
           <div className="ACM">
@@ -128,7 +157,7 @@ const LeftSidebar = () => {
             <div className="sub-menu">
               <p onClick={() => navigate("/profile")}>Edit Profile</p>
               <hr />
-              <p>Log out</p>
+              <p onClick={() => logout()}>Log out</p>
             </div>
           </div>
         </div>

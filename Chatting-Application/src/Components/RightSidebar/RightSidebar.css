@@ -94,3 +94,8 @@
   margin-bottom: 30px;
   border-radius: 10px;
 }
+@media (max-width: 900px) {
+  .rs {
+    display: none;
+  }
+}

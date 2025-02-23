@@ -6,17 +6,15 @@ import ProfileUpdate from "./pages/profile_update.jsx/profile_update";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Leads from "./pages/Leads/leads";
-import { use } from "react";
 import { auth } from "./config/firebase";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 
 import { useEffect } from "react";
 import { AppContext } from "./context/AppContext";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "./config/firebase";
-import { createContext } from "react";
-import Event from "./pages/events/event"
+
+import Event from "./pages/events/event";
+import About from "./pages/about/about";
 
 const App = () => {
   const navigate = useNavigate();
@@ -41,7 +39,7 @@ const App = () => {
         <Route path="/profile" element={<ProfileUpdate />} />
         <Route path="/leads" element={<Leads />} />
         <Route path="/event" element={<Event />} />
-        
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );
