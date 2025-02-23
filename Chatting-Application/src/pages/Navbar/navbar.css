@@ -45,16 +45,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 376px;
+  width: max-content; /* Adapts to text width */
   height: 49px;
   gap: 24px;
+  padding: 0 10px; /* Optional: Add padding to prevent text from touching edges */
 }
+
 
 .nav-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 67px;
+  min-width: fit-content; /* Allow button to adjust width */
   height: 29px;
   font-family: "Times New Roman", Times, serif;
   color: white;
@@ -63,7 +65,20 @@
   line-height: 28.8px;
   position: relative;
   text-decoration: none;
+  padding: 4px 8px; /* Add padding for better spacing */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content; /* Let it expand naturally */
+    height: 49px;
+    gap: 24px;
+    padding: 0 10px;
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  
 }
+
 
 .nav-link::after {
   content: "";

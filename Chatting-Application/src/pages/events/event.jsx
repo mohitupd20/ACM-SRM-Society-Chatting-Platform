@@ -10,7 +10,7 @@ import assets from "../../assets/assets";
 import Navbar from "../Navbar/navbar";
 
 const upcomingEvent = {
-  name: "Ossome Hacks 2.0",
+  name: "Hack Odyssey-2K25",
   date: "2025-03-13T00:00:00",
   location: "CENTRAL LIBRARY ,KARE",
   image: assets.acm_event1,

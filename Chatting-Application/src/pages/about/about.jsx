@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 import assets from "../../assets/assets";
-
+import Navbar from "../Navbar/navbar";
 const About = () => {
   const teamMembers = [
     {
@@ -52,6 +52,8 @@ const About = () => {
   ];
 
   return (
+    <>
+    <Navbar/>
     <div className="leads-container_acm_leads">
       <h1 className="about-title">About Us</h1>
       <div className="cards-spacing"></div>
@@ -99,7 +101,9 @@ const About = () => {
       <div className="quote-spacing"></div>
       <h2 className="team-quote">"Building connections through code."</h2>
     </div>
+    </>
   );
+  
 };
 
 export default About;

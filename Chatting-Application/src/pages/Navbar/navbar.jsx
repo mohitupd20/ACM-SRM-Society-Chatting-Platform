@@ -35,12 +35,15 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="nav-links">
+          <a href="/contact" className="nav-link">
+            Chat
+          </a>
           <a
-            onClick={() => navigate("/about")}
+            onClick={() => navigate("/Event")}
             className="nav-link"
             style={{ cursor: "pointer" }}
           >
-            About
+            Events
           </a>
           <a
             onClick={() => navigate("/leads")}
@@ -50,14 +53,11 @@ const Navbar = () => {
             Team
           </a>
           <a
-            onClick={() => navigate("/Event")}
+            onClick={() => navigate("/about")}
             className="nav-link"
             style={{ cursor: "pointer" }}
           >
-            Events
-          </a>
-          <a href="/contact" className="nav-link">
-            Contact
+            About Us
           </a>
         </div>
 
@@ -72,12 +72,21 @@ const Navbar = () => {
         <div className="mobile-nav-links">
           <a
             onClick={() => {
-              navigate("/about");
+              navigate("/chat");
               toggleMenu();
             }}
             className="nav-link"
           >
-            About
+            Chat
+          </a>
+          <a
+            onClick={() => {
+              navigate("/Event");
+              toggleMenu();
+            }}
+            className="nav-link"
+          >
+            Events
           </a>
           <a
             onClick={() => {
@@ -90,15 +99,12 @@ const Navbar = () => {
           </a>
           <a
             onClick={() => {
-              navigate("/Event");
+              navigate("/aboutUs");
               toggleMenu();
             }}
             className="nav-link"
           >
-            Events
-          </a>
-          <a href="/contact" className="nav-link" onClick={toggleMenu}>
-            Contact
+            About Us
           </a>
         </div>
       </nav>
