@@ -95,8 +95,8 @@
   background: -webkit-linear-gradient(to right, #80dfff, #b3c6ff);
   background: linear-gradient(to right, #80dfff, #b3c6ff);
   width: 100%;
-  position: absolute;
-  top: 72px;
+  position: sticky;
+
   left: 0;
   z-index: 49;
   transition: all 0.3s ease;
@@ -128,7 +128,6 @@
 
   .navbar-mobile {
     display: flex;
-    margin-top: 10%;
   }
   .logo-text {
     font-size: 0; /* Hide the original text */
